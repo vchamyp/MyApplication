@@ -41,7 +41,7 @@
                 android:layout_height="30dp"
                 android:layout_weight="1"
                 android:layout_marginLeft="5dp"
-                android:text="image : 3/5"
+                android:text="@string/img_count"
                 android:textColor="@color/black"
                 android:gravity="center|left"
                 />
@@ -52,7 +52,7 @@
                 android:layout_height="30dp"
                 android:layout_weight="1"
                 android:layout_marginLeft="5dp"
-                android:text="10/11/2020 : 10.23 PM"
+                android:text="@string/time_str"
                 android:textColor="@color/black"
                 android:gravity="center|left"
                 />

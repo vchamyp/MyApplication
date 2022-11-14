@@ -19,7 +19,7 @@
         android:layout_height="20dp"
 
         android:gravity="center|center_horizontal"
-        android:text="Image 1"
+        android:text="@string/image_name"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
 
     <TextView
@@ -28,7 +28,7 @@
         android:layout_height="20dp"
 
         android:gravity="center|center_horizontal"
-        android:text="imag : 3/5"
+        android:text="@string/img_count"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
 
     <TextView
@@ -36,7 +36,7 @@
         android:layout_width="match_parent"
         android:layout_height="20dp"
         android:gravity="center|center_horizontal"
-        android:text="10/11/2020 : 10.23 PM"
+        android:text="@string/img_count"
         android:textSize="10dp"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
          />
