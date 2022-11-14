@@ -8,29 +8,35 @@ import android.widget.Filter
 import android.widget.Filterable
 import android.widget.ImageView
 import android.widget.TextView
-import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.squareup.picasso.Picasso
 import java.text.SimpleDateFormat
 import java.util.*
 import kotlin.collections.ArrayList
 
-class MyAdapter(var context: Context, var modelData: ArrayList<Data> ) :
-    RecyclerView.Adapter<MyAdapter.MyViewHolder>(),Filterable {
+class MyAdapter(var context: Context, var modelData: ArrayList<Data>) :
+    RecyclerView.Adapter<MyAdapter.MyViewHolder>(), Filterable {
 
-    var filterArrayList:ArrayList<Data> = modelData
-    companion object var view_TypeOne: Int = Constant.LISTCOUNTONE
+    var filterArrayList: ArrayList<Data> = modelData
+
+    companion object
+
+    var view_TypeOne: Int = Constant.LISTCOUNTONE
+
+    // inflate view in the adapter
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
         val view: View
+        //switching grid or lsit layout inflates
         if (view_TypeOne == Constant.LISTCOUNTONE) {
             view = LayoutInflater.from(context).inflate(R.layout.list_view, parent, false)
         } else {
-            view = LayoutInflater.from(context).inflate(R.layout.item_small, parent, false)
+            view = LayoutInflater.from(context).inflate(R.layout.item_grid, parent, false)
         }
         return MyViewHolder(view)
     }
 
+    // bind the view adapter
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
 
         val modelItem = modelData[position]
@@ -38,12 +44,12 @@ class MyAdapter(var context: Context, var modelData: ArrayList<Data> ) :
     }
 
     override fun getItemCount(): Int {
+        // get count on  list
         return modelData.size
     }
 
-
+    // init the view in xml
     inner class MyViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-
 
         var currModel: Data? = null
         var curepos: Int = 0
@@ -54,25 +60,29 @@ class MyAdapter(var context: Context, var modelData: ArrayList<Data> ) :
             var date: TextView
             var img: ImageView
 
+            // list view data set
             if (view_TypeOne == Constant.LISTCOUNTONE) {
                 textview = itemView.findViewById(R.id.title_tv)
                 textview.text = modelItem!!.title
 
-                img=itemView.findViewById(R.id.imag_v)
+                img = itemView.findViewById(R.id.imag_v)
                 Picasso.with(context).load(modelItem.img).into(img);
 
-                date=itemView.findViewById(R.id.date_tvv)
-                date.text=dateTime()
+                date = itemView.findViewById(R.id.date_tvv)
+                date.text = dateTime()
 
             } else {
+
+                // grid view data set
+
                 textview = itemView!!.findViewById(R.id.title_small)
                 textview.text = modelItem!!.title
 
-                img=itemView.findViewById(R.id.image_small)
+                img = itemView.findViewById(R.id.image_small)
                 Picasso.with(context).load(modelItem.img).into(img);
 
-                date=itemView.findViewById(R.id.date_tv)
-                date.text=dateTime()
+                date = itemView.findViewById(R.id.date_tv)
+                date.text = dateTime()
             }
 
             curepos = position
@@ -84,7 +94,9 @@ class MyAdapter(var context: Context, var modelData: ArrayList<Data> ) :
 
     override fun getFilter(): Filter {
 
-        var filter = object :Filter() {
+        //search option for list and grid
+
+        var filter = object : Filter() {
             override fun performFiltering(p0: CharSequence?): FilterResults {
                 var filterResults = FilterResults()
 
@@ -116,7 +128,7 @@ class MyAdapter(var context: Context, var modelData: ArrayList<Data> ) :
 
             override fun publishResults(p0: CharSequence?, p1: FilterResults?) {
 
-                modelData = p1!!.values as  ArrayList<Data>
+                modelData = p1!!.values as ArrayList<Data>
                 notifyDataSetChanged()
             }
 
@@ -125,14 +137,14 @@ class MyAdapter(var context: Context, var modelData: ArrayList<Data> ) :
         return filter
     }
 
-    fun dateTime():String{
+    // current date and time get for list
+    fun dateTime(): String {
 
         val dateFormat = SimpleDateFormat("dd-MMM-yy hh.mm aa")
         val formattedDate: String = dateFormat.format(Date()).toString()
         //println("date->"+formattedDate)
         return formattedDate
     }
-
 
 }
 

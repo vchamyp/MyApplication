@@ -20,6 +20,7 @@ class MainActivity : AppCompatActivity() {
     lateinit var layoutManager: GridLayoutManager
     lateinit var adapter: MyAdapter
 
+    // search view variable
     lateinit var searchview: SearchView
     lateinit var recyclerView: RecyclerView
 
@@ -28,50 +29,44 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-
-
+        // local json reading with Gson
         val json: String = jsonFileRead()
         val gson = Gson()
-
         val model = gson.fromJson(json, Model::class.java)
 
+        // from local json to model class
         var arrlist: ArrayList<Data> = model.data
 
         recyclerView = findViewById(R.id.recycleview)
 
+        //list status set with GridLayoutManager or linearlayoutmanager
         layoutManager = GridLayoutManager(this, 1)
         layoutManager.orientation = GridLayoutManager.VERTICAL
 
         recyclerView.layoutManager = layoutManager
         adapter = MyAdapter(this, arrlist)
-
         recyclerView.isNestedScrollingEnabled = false
 
+        // reset adapter class
         setAdapter()
 
     }
 
     fun setAdapter(){
         recyclerView.adapter = adapter;
-
     }
 
     fun jsonFileRead(): String {
 
         var json: String? = null
-
         try {
-
             val inputStreams: InputStream = assets.open("model.json")
             json = inputStreams.bufferedReader().use { it.readText() }
-
             return json
-
         } catch (e: IOException) {
+            e.printStackTrace()
         }
-
         return "empty"
-
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
@@ -85,7 +80,6 @@ class MainActivity : AppCompatActivity() {
          searchview.setOnQueryTextListener(object : SearchView.OnQueryTextListener,
              android.widget.SearchView.OnQueryTextListener {
              override fun onQueryTextSubmit(p0: String?): Boolean {
-
                  return false
              }
 
@@ -105,6 +99,7 @@ class MainActivity : AppCompatActivity() {
 
             setAdapter()
 
+            //switch to grid or list
             switchLayout()
             switchIcon(item)
             return true
@@ -122,7 +117,6 @@ class MainActivity : AppCompatActivity() {
             layoutManager.setSpanCount(Constant.LISTCOUNTONE)
         }
         adapter.notifyItemRangeChanged(0, adapter.getItemCount())
-
 
     }
 
