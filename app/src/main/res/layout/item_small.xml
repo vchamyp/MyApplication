@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="200dp"
+
+    android:background="#FFFFFF"
+    android:orientation="vertical">
+
+    <ImageView
+        android:id="@+id/image_small"
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/apple" />
+
+    <TextView
+        android:id="@+id/title_small"
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
+
+        android:gravity="center|center_horizontal"
+        android:text="Image 1"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+
+    <TextView
+        android:id="@+id/img_count_tv"
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
+
+        android:gravity="center|center_horizontal"
+        android:text="imag : 3/5"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+
+    <TextView
+        android:id="@+id/date_tv"
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
+        android:gravity="center|center_horizontal"
+        android:text="10/11/2020 : 10.23 PM"
+        android:textSize="10dp"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+         />
+
+
+</LinearLayout>
