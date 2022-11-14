@@ -4,15 +4,16 @@ import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Filter
-import android.widget.Filterable
-import android.widget.ImageView
-import android.widget.TextView
+import android.widget.*
 import androidx.recyclerview.widget.RecyclerView
 import com.squareup.picasso.Picasso
 import java.text.SimpleDateFormat
 import java.util.*
-import kotlin.collections.ArrayList
+import android.content.Intent
+
+
+
+
 
 class MyAdapter(var context: Context, var modelData: ArrayList<Data>) :
     RecyclerView.Adapter<MyAdapter.MyViewHolder>(), Filterable {
@@ -41,6 +42,9 @@ class MyAdapter(var context: Context, var modelData: ArrayList<Data>) :
 
         val modelItem = modelData[position]
         holder.setData(modelItem, position)
+
+
+
     }
 
     override fun getItemCount(): Int {
@@ -75,6 +79,12 @@ class MyAdapter(var context: Context, var modelData: ArrayList<Data>) :
                 textview = itemView.findViewById(R.id.img_cnt_tv)
                 textview.text ="Image : "+ modelItem!!.img_cnt
 
+                img.setOnClickListener(View.OnClickListener {
+                    val intent: Intent = Intent(context, ImageViewActivity::class.java)
+                    intent.putExtra("img", modelItem.img);
+                    context.startActivity(intent)
+                })
+
             } else {
 
                 // grid view data set
@@ -94,6 +104,13 @@ class MyAdapter(var context: Context, var modelData: ArrayList<Data>) :
 
             curepos = position
             currModel = modelItem
+
+
+            img.setOnClickListener(View.OnClickListener {
+                val intent: Intent = Intent(context, ImageViewActivity::class.java)
+                intent.putExtra("img", modelItem.img);
+                context.startActivity(intent)
+            })
 
         }
 
