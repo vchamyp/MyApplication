@@ -59,6 +59,7 @@ class MyAdapter(var context: Context, var modelData: ArrayList<Data>) :
             var textview: TextView
             var date: TextView
             var img: ImageView
+            var img_cnt: TextView
 
             // list view data set
             if (view_TypeOne == Constant.LISTCOUNTONE) {
@@ -70,6 +71,9 @@ class MyAdapter(var context: Context, var modelData: ArrayList<Data>) :
 
                 date = itemView.findViewById(R.id.date_tvv)
                 date.text = dateTime()
+
+                textview = itemView.findViewById(R.id.img_cnt_tv)
+                textview.text ="Image : "+ modelItem!!.img_cnt
 
             } else {
 
@@ -83,6 +87,9 @@ class MyAdapter(var context: Context, var modelData: ArrayList<Data>) :
 
                 date = itemView.findViewById(R.id.date_tv)
                 date.text = dateTime()
+
+                textview = itemView.findViewById(R.id.img_count_tv)
+                textview.text = "Image : "+modelItem!!.img_cnt
             }
 
             curepos = position

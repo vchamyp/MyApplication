@@ -4,41 +4,60 @@
     {
       "id":1,
       "title":"Apple",
-      "img":"https://i.ibb.co/L9Y55VJ/apple.png"
+      "img":"https://i.ibb.co/L9Y55VJ/apple.png",
+      "img_cnt": "1/5"
     },
     {
       "id":2,
       "title":"Orange",
-      "img":"https://i.ibb.co/jRdQpt2/orange.jpg"
+      "img":"https://i.ibb.co/jRdQpt2/orange.jpg",
+      "img_cnt": "1/5"
     },
     {
       "id":3,
       "title":"Cranberry",
-      "img":"https://i.ibb.co/HtCN1cM/strawberry.png"
+      "img":"https://i.ibb.co/HtCN1cM/strawberry.png",
+      "img_cnt": "1/5"
     },{
-      "id":3,
+      "id":4,
       "title":"Dragonrfruit",
-      "img":"https://i.ibb.co/rtPCsj6/dragon.png"
+      "img":"https://i.ibb.co/rtPCsj6/dragon.png",
+      "img_cnt": "1/5"
     },{
-      "id":3,
+      "id":5,
       "title":"Watermelon",
-      "img":"https://i.ibb.co/cNt46N8/water.png"
+      "img":"https://i.ibb.co/cNt46N8/water.png",
+      "img_cnt": "1/5"
     },{
-      "id":3,
+      "id":6,
       "title":"Avocados",
-      "img":"https://i.ibb.co/3RZ2cdp/avocado.png"
+      "img":"https://i.ibb.co/3RZ2cdp/avocado.png",
+      "img_cnt": "1/5"
     },{
-      "id":3,
+      "id":7,
       "title":"Cocount",
-      "img":"https://i.ibb.co/jb6vjHf/cocount.jpg"
+      "img":"https://i.ibb.co/jb6vjHf/cocount.jpg",
+      "img_cnt": "1/5"
     },{
-      "id":3,
+      "id":8,
       "title":"Mango",
-      "img":"https://i.ibb.co/p4tRB17/mango.png"
+      "img":"https://i.ibb.co/p4tRB17/mango.png",
+      "img_cnt": "1/5"
     },{
-      "id":3,
+      "id":9,
       "title":"Jackfruit",
-      "img":"https://i.ibb.co/j82ZcHm/jack.png"
+      "img":"https://i.ibb.co/j82ZcHm/jack.png",
+      "img_cnt": "1/5"
+    },{
+      "id":10,
+      "title":"Apple",
+      "img":"https://i.ibb.co/L9Y55VJ/apple.png",
+      "img_cnt": "1/5"
+    },{
+      "id":11,
+      "title":"Orange",
+      "img":"https://i.ibb.co/jRdQpt2/orange.jpg",
+      "img_cnt": "1/5"
     }
   ]
 }
